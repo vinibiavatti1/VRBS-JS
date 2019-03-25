@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VRBSJS</title>
+    <script src="jquery.js"></script>
+    <script src="vrbs.js"></script>
+    <style>
+        body {
+            margin: 10px;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        tr,
+        td {
+            padding: 5px 10px;
+        }
+
+        .absolute {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="absolute" style="top: 10px; left: 10px; width: 600px;">
+        Código
+        <textarea style="width: 100%; height: 400px;" id="codigo">var(a,0)
+label(loop)
+    calc($a,+,1,a)
+    printLn($a)
+    if($a,=,10,fim)
+goto(loop)
+label(fim)       
+         </textarea>
+        <br>
+        <button onclick="executar()">Executar</button>
+        <br><br>
+        Saída
+        <textarea readonly style="width: 100%; height: 200px;" id="saida"></textarea>
+    </div>
+    <div id="tabela-comandos" class="absolute" style="top: 10px; left: 630px; width: 250px; overflow: auto; display: none">
+        Comandos
+        <table border="1">
+            <thead>
+                <tr>
+                    <td>#</td>
+                    <td>Comando</td>
+                </tr>
+            </thead>
+            <tbody id="comandos">
+            </tbody>
+        </table>
+    </div>
+    <div id="tabela-variaveis" class="absolute" style="top: 10px; left: 890px; width: 250px; overflow: auto; display: none">
+        Variáveis
+        <table border="1">
+            <thead>
+                <tr>
+                    <td>Variável</td>
+                    <td>Valor</td>
+                </tr>
+            </thead>
+            <tbody id="variaveis">
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
